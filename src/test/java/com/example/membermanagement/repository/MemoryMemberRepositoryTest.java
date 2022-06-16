@@ -3,6 +3,7 @@ package com.example.membermanagement.repository;
 import helloSpring.domain.Member;
 import helloSpring.repository.MemoryMemberRepository;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -10,6 +11,12 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 public class MemoryMemberRepositoryTest {
 
     MemoryMemberRepository repository = new MemoryMemberRepository();
+
+    @AfterEach
+    public void afterEach() {
+        repository.clearStore();
+        // after each Test , it delete repository.
+    }
 
     @Test
     public void save(){
