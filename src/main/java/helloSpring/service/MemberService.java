@@ -13,10 +13,17 @@ public class MemberService {
 
     public Long join(Member member) {
 //        duplicated name can not be joined .
-        Optional<Member> result = memberRepository.findByName(member.getName());
-        result.ifPresent(m ->{
-            throw new IllegalStateException( "Already existing member") ;
-        });
+
+
+//        Optional<Member> result = memberRepository.findByName(member.getName());
+//        result.ifPresent(m ->{
+//            throw new IllegalStateException( "Already existing member") ;
+//        });
+
+        memberRepository.findByName(member.getName())
+                        .ifPresent(m ->{
+                            throw new IllegalStateException("Already existing member");
+                        });
 
 
         memberRepository.save(member);
