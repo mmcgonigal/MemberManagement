@@ -5,6 +5,8 @@ import memberManagement.domain.Member;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.fail;
+
 class MemberServiceTest {
 
     MemberService memberService = new MemberService();
@@ -23,6 +25,28 @@ class MemberServiceTest {
         //then    --- result should be this .
         Member foundMember  = memberService.findOne(saveId).get();
         Assertions.assertThat(member.getName()).isEqualTo(foundMember.getName());
+    }
+
+    @Test
+    public void duplicateMemberException() {
+
+        //given
+        Member member1 = new Member();
+        member1.setName("mina");
+
+        Member member2 = new Member();
+        member2.setName("mina");
+
+        //when
+        memberService.join(member1);
+        try {
+            memberService.join(member2);
+            fail();
+        } catch (IllegalStateException e) {
+            Assertions.assertThat(e.getMessage()).isEqualTo("Already existing member");
+
+        }
+
     }
 
     @Test
