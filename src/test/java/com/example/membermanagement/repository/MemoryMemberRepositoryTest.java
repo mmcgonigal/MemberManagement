@@ -36,6 +36,22 @@ public class MemoryMemberRepositoryTest {
         assertThat(result).isEqualTo(member1);
     }
 
+    @Test
+    public void fainAll(){
+        Member member1 = new Member();
+        member1.setName("Spring1");
+        repository.save(member1);
+
+        Member member2 = new Member();
+        member2.setName("Spring2");
+        repository.save(member2);
+
+        Member result = repository.findByName("Spring1").get();
+
+        assertThat(result).isEqualTo(member1);
+
+    }
+
 
 
 
