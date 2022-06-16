@@ -5,6 +5,7 @@ import memberManagement.domain.Member;
 import memberManagement.repository.MemoryMemberRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -12,8 +13,15 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 class MemberServiceTest {
 
-    MemberService memberService = new MemberService();
-    MemoryMemberRepository repository = new MemoryMemberRepository();
+//    Dependency injection
+    MemberService memberService;
+    MemoryMemberRepository repository ;
+
+    @BeforeEach
+    public void beforeEach() {
+        repository= new MemoryMemberRepository();
+        memberService= new MemberService(repository);
+    }
 
     @AfterEach
     public void afterEach(){
@@ -57,7 +65,7 @@ class MemberServiceTest {
 //        }
         memberService.join(member1);
         IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2));
-        Assertions.assertThat(e.getMessage()).isEqualTo("Already existng member");
+        Assertions.assertThat(e.getMessage()).isEqualTo("Already existing member");
 
     }
 
