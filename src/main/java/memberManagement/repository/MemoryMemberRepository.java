@@ -1,6 +1,6 @@
-package helloSpring.repository;
+package memberManagement.repository;
 
-import helloSpring.domain.Member;
+import memberManagement.domain.Member;
 
 import java.util.*;
 

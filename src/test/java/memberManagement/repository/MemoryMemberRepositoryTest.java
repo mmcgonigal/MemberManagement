@@ -1,7 +1,6 @@
-package com.example.membermanagement.repository;
+package memberManagement.repository;
 
-import helloSpring.domain.Member;
-import helloSpring.repository.MemoryMemberRepository;
+import memberManagement.domain.Member;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;

@@ -1,8 +1,8 @@
-package helloSpring.service;
+package memberManagement.service;
 
-import helloSpring.domain.Member;
-import helloSpring.repository.MemberRepository;
-import helloSpring.repository.MemoryMemberRepository;
+import memberManagement.domain.Member;
+import memberManagement.repository.MemberRepository;
+import memberManagement.repository.MemoryMemberRepository;
 
 import java.util.List;
 import java.util.Optional;

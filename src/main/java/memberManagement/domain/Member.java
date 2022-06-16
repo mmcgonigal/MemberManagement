@@ -1,4 +1,4 @@
-package helloSpring.domain;
+package memberManagement.domain;
 
 public class Member {
 
