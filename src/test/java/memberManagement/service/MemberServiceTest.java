@@ -2,14 +2,23 @@ package memberManagement.service;
 
 import memberManagement.domain.Member;
 
+import memberManagement.repository.MemoryMemberRepository;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
 
 class MemberServiceTest {
 
     MemberService memberService = new MemberService();
+    MemoryMemberRepository repository = new MemoryMemberRepository();
+
+    @AfterEach
+    public void afterEach(){
+        repository.clearStore();
+    }
 
     @Test
     void join() {
@@ -38,14 +47,17 @@ class MemberServiceTest {
         member2.setName("mina");
 
         //when
+//        memberService.join(member1);
+//        try {
+//            memberService.join(member2);
+//            fail();
+//        } catch (IllegalStateException e) {
+//            Assertions.assertThat(e.getMessage()).isEqualTo("Already existing member");
+//
+//        }
         memberService.join(member1);
-        try {
-            memberService.join(member2);
-            fail();
-        } catch (IllegalStateException e) {
-            Assertions.assertThat(e.getMessage()).isEqualTo("Already existing member");
-
-        }
+        IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2));
+        Assertions.assertThat(e.getMessage()).isEqualTo("Already existng member");
 
     }
 
