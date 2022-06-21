@@ -1,4 +1,4 @@
-package memberManagement.controller;
+package com.example.membermanagement.controller;
 
 
 import org.springframework.stereotype.Controller;

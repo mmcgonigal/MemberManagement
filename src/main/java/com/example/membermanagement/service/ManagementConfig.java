@@ -1,8 +1,7 @@
-package com.example.membermanagement;
+package com.example.membermanagement.service;
 
-import memberManagement.repository.MemberRepository;
-import memberManagement.repository.MemoryMemberRepository;
-import memberManagement.service.MemberService;
+import com.example.membermanagement.repository.MemberRepository;
+import com.example.membermanagement.repository.MemoryMemberRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

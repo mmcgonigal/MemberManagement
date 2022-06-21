@@ -1,7 +1,7 @@
-package memberManagement.repository;
+package com.example.membermanagement.repository;
 
 
-import memberManagement.domain.Member;
+import com.example.membermanagement.domain.Member;
 
 import java.util.List;
 import java.util.Optional;

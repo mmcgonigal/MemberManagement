@@ -1,7 +1,7 @@
-package memberManagement.controller;
+package com.example.membermanagement.controller;
 
 
-import memberManagement.service.MemberService;
+import com.example.membermanagement.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 

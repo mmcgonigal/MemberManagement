@@ -1,6 +1,6 @@
-package memberManagement.repository;
+package com.example.membermanagement.repository;
 
-import memberManagement.domain.Member;
+import com.example.membermanagement.domain.Member;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;

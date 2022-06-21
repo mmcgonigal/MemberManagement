@@ -1,7 +1,6 @@
-package memberManagement.repository;
+package com.example.membermanagement.repository;
 
-import memberManagement.domain.Member;
-import org.springframework.stereotype.Repository;
+import com.example.membermanagement.domain.Member;
 
 import java.util.*;
 

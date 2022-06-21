@@ -1,8 +1,8 @@
-package memberManagement.service;
+package com.example.membermanagement.service;
 
-import memberManagement.domain.Member;
+import com.example.membermanagement.domain.Member;
 
-import memberManagement.repository.MemoryMemberRepository;
+import com.example.membermanagement.repository.MemoryMemberRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

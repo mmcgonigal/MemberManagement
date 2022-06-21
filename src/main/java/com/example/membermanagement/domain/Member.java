@@ -1,4 +1,4 @@
-package memberManagement.domain;
+package com.example.membermanagement.domain;
 
 public class Member {
 

@@ -1,10 +1,7 @@
-package memberManagement.service;
+package com.example.membermanagement.service;
 
-import memberManagement.domain.Member;
-import memberManagement.repository.MemberRepository;
-import memberManagement.repository.MemoryMemberRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.example.membermanagement.domain.Member;
+import com.example.membermanagement.repository.MemberRepository;
 
 import java.util.List;
 import java.util.Optional;
